@@ -1,0 +1,507 @@
+/********** Template CSS **********/
+:root {
+    --primary: green;
+    --secondary: #191C24;
+    --light: white;
+    --dark: #000000;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn:focus {
+    outline: 2px solid green;
+    outline-offset: 2px;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 40px 0;
+    color: var(--light);
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-nav .nav-link,
+    .navbar.shadow-sm .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 8px;
+        border-top: 1px solid var(--light);
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.shadow-sm .navbar-nav .nav-link {
+        padding: 20px 0;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar-brand h1 {
+        font-size: 23px; /* Further adjust the brand font size for very small screens */
+    }
+    .navbar-nav .nav-link {
+        padding: 0.25rem 0.5rem; /* Further adjust padding for nav links on very small screens */
+    }
+   
+}
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .70);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding-top: 10%;
+    padding-bottom: 30%; 
+    padding-left: 30px;
+    padding-right: 400px; /* Adjust padding as needed */
+}
+
+.carousel-caption h1 {
+    margin: 10px 0; /* Adjust margins as needed */
+    font-size: 2.5rem; /* Adjust font size as needed for desktop */
+}
+.carousel-caption h4 {
+    margin: 10px 0; /* Adjust margins as needed */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        padding: 10px; /* Adjust padding for smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .carousel-caption h4 {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel-caption h1 {
+        font-size: 4rem; /* Slightly reduce font size for desktop */
+    }
+
+    .carousel-caption {
+        text-align: center;
+    }    
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 576px) {
+    .contact-button {
+        flex: 1 1 auto; /* Allow buttons to grow and shrink */
+        margin: 0 2px;  /* Add a small margin for spacing */
+        min-width: 57%; /* Ensure buttons take up at least 45% of the container */
+    }
+}
+
+.about-services{
+    background-color: white;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    border: 3px solid green;
+    border-radius: 10px;
+    
+}
+
+.service-item .btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    color: var(--primary);
+    background: var(--dark);
+    opacity: 1; /* Always visible */
+    transition: opacity 0.3s ease;
+}
+
+.container-xxll {
+    background-color: white; /* Background color of the container */
+}
+
+.service-item {
+    background-color:black; /* Background color of each service item */
+    color: white; /* Text color of each service item */
+}
+
+
+@media (max-width: 576px) {
+    .service-item h3 {
+        font-size: 1rem; /* Adjust the font size as needed */
+    }
+}
+
+/* contact form section */
+/* Add styles for the bordered-form class */
+.bordered-form {
+    border: 2px solid green; /* Adjust the color and width as needed */
+    border-radius: 5px; /* Optional: Add some border radius */
+    padding: 20px; /* Optional: Add some padding inside the form */
+    background-color:black; /* Optional: Change the background color */
+}
+
+/* Form validation feedback styles */
+.was-validated .form-control:invalid,
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-control:valid ~ .invalid-feedback {
+    display: none;
+}
+
+/* Alert styles */
+.alert {
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+
+
+
+/*** Testimonial ***/
+
+.Testimonial-container{
+    background-color: black;
+}
+
+.testimonial-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 35px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dots .owl-dot {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    padding: 10px;
+    background: var(--secondary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active {
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot img {
+    opacity: .1;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active img {
+    opacity: 1;
+}
+
+
+/*** Footer ***/
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--light);
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 1.5rem;
+    font-size: 15px;
+    background: var(--dark);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .copyright a:hover {
+    color: var(--primary);
+}
+
+/* elcricalhtml and all sub elements */
+
+
+.container {
+    width: 100%;
+    padding-top: 40px;
+}
+
+.main-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.services-heading {
+    margin-top: -90px; /* Adjust the value as needed */
+}
+
+.services-description {
+    margin-top: 10px; /* Adjust the value as needed */
+}
+
+.contact-button {
+    margin-top: 5px; /* Adjust the value as needed */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 90px;
+    padding-left: 10px;
+}
+
+.responsive {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+    padding: 10px;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures aspect ratio is maintained */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add transition for smooth effect */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+    filter: brightness(1.1); /* Slightly brighten the image on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .responsive {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-image {
+        flex-direction: column;
+    }
+
+    .main-image img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .responsive {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive {
+        flex: 1 1 100%;
+    }
+}
+
+.about-image {
+    margin-left: -20px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
